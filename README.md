@@ -11,9 +11,9 @@ The system aims to reduce the workload of university help-desk staff by providin
 
 | Member           | Role        | Responsibility                                   |
 | ---------------- | ----------- | ------------------------------------------------ |
-| **Anant Singh**  | Team Member | Project development and documentation            |
-| **Amlesh Singh** | Team Member | Backend, AI integration and project coordination |
-| **Agraj Dixit**  | Team Member | Frontend development and testing                 |
+| **Anant Singh**  | Team Member | Project development and  Frontend development    | 
+| **Agraj Dixit**  | Team Member | Backend, AI integration and project coordination  |
+| **Amlesh Singh** | Team Member | Deployment, documentation and testing           |
 
 ## Technologies
 
@@ -129,9 +129,9 @@ The chatbot is intended to provide 24/7 assistance and reduce the workload of th
 | Role                    | Responsibility                                        | Member           |
 | ----------------------- | ----------------------------------------------------- | ---------------- |
 | Project Coordinator     | Planning, coordination and project management         | **Amlesh Singh** |
-| AI / Backend Developer  | Chatbot logic, backend development and AI integration | **Anant Singh** |
+| AI / Backend Developer  | Chatbot logic, backend development and AI integration | **Anant Singh**  |
 | Frontend Developer      | User interface and chatbot interaction                | **Agraj Dixit**  |
-| Documentation & Testing | Documentation, testing and bug reporting              | **Amlesh Singh**  |
+| Documentation & Testing | Documentation, testing and bug reporting, Deployment  | **Amlesh Singh** |
 
 # Project Setup
 
