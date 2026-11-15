@@ -1,4 +1,3 @@
-##AI-Chatbot-for-University-help-desk
 # AI Chatbot for University Help Desk
 
 ## Project Description
@@ -263,7 +262,14 @@ AI-Chatbot-for-University-help-desk/
 
 **README.md** – Contains project description, objectives, technologies, team information, and setup details.
 
-**docs/** – Contains Software Requirements Specification, UML diagrams, and other project documentation.
+**docs/** – Contains project engineering documentation:
+  - [Software Requirements Specification (SRS)](docs/SRS/SRS.md)
+  - [Use Case Diagram & Specs](docs/UML/use-case-diagram.md)
+  - [Class Diagram](docs/UML/class-diagram.md)
+  - [Activity Diagram](docs/UML/activity-diagram.md)
+  - [Sequence Diagram](docs/UML/sequence-diagram.md)
+  - [System Architecture & ER Diagram](docs/UML/system-architecture.md)
+  - [Software Testing Documentation](docs/TESTING.md)
 
 **src/** – Contains the source code of the chatbot.
 
@@ -290,3 +296,48 @@ Using GitHub allows the project team to maintain a history of changes, collabora
 # Result
 
 The **AI Chatbot for University Help Desk** project was successfully selected and the project team was formed. A GitHub repository was created, the initial project structure was established, and basic Git version-control operations including **add, commit, push, pull, status, and log** were demonstrated successfully.
+
+---
+
+# How to Run the Application
+
+## 1. Prerequisites
+- Python 3.10+ (tested on Python 3.14)
+- Install required dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+## 2. Initialize and Seed the Knowledge Base
+Populate the initial KIET FAQ knowledge base into SQLite:
+```bash
+python src/backend/data/seed_faqs.py
+```
+
+## 3. Start the Flask Backend Server
+Launch the backend application:
+```bash
+python src/backend/app.py
+```
+The application will start on `http://127.0.0.1:5000`.
+
+## 4. Open the Frontend Interface
+- **Recommended Method (Via Flask):** Navigate to `http://127.0.0.1:5000/chat` in your web browser while the Flask server is running.
+- **Local File Note:** Opening `src/frontend/index.html` directly in a browser (e.g., via `file:///`) may not work correctly because the frontend communicates directly with the Flask backend API (`http://127.0.0.1:5000/api/chat`). Accessing the interface through the Flask route at `http://127.0.0.1:5000/chat` is recommended to ensure seamless API connectivity.
+
+## 5. Run the Automated Test Suite
+Execute the 70 PyTest unit and integration tests:
+```bash
+pytest
+```
+
+## 6. Production Deployment Notes
+
+> **Note:** The current project setup is configured for local academic development, testing, and evaluation. Full production deployment has not yet been completed.
+
+When preparing and deploying the application into a production environment, implement the following operational safeguards:
+- **Disable Flask Debug Mode:** Run with `DEBUG = False` and set `FLASK_ENV=production` to ensure debug endpoints and detailed stack traces are not exposed.
+- **Set a Strong SECRET_KEY:** Configure a cryptographically secure, unpredictable `SECRET_KEY` via environment variables rather than using development defaults.
+- **Set a Strong ADMIN_API_KEY:** Assign a strong, confidential administrative API key via `ADMIN_API_KEY` to secure the FAQ management endpoints.
+- **Use a Production WSGI Server:** Replace the built-in Flask development server with a battle-tested WSGI/ASGI server (e.g., Waitress on Windows, Gunicorn on Linux) behind a reverse proxy (e.g., Nginx).
+- **Enforce HTTPS:** Serve all client-server communications over TLS/HTTPS to protect chatbot conversations, credentials, and API payloads in transit.
