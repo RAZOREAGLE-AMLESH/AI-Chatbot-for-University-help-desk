@@ -11,7 +11,7 @@
   // Configuration & State
   // ──────────────────────────────────────────────
   const API_ENDPOINT = (window.location.protocol === 'file:' || !window.location.port || window.location.port !== '5000')
-    ? 'http://127.0.0.1:5000/api/chat'
+    ? 'https://ai-chatbot-for-university-help-desk.onrender.com/api/chat'
     : '/api/chat';
 
   const STORAGE_KEY = 'kiet_chat_session_id';
